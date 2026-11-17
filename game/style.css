@@ -1,0 +1,50 @@
+/* style.css — the page around EMBERFALL's canvas. The game itself draws
+   everything inside the canvas; this file only centres it on a dark page
+   and keeps it readable at any window size. No external fonts or assets. */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  background: #05060f;
+  font-family: "Trebuchet MS", "Segoe UI", system-ui, sans-serif;
+}
+
+.stage {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+#game {
+  display: block;
+  width: min(96vw, calc(96vh * 1.6));
+  height: auto;
+  aspect-ratio: 960 / 600;
+  border-radius: 10px;
+  box-shadow: 0 0 60px rgba(59, 74, 138, 0.45), 0 0 140px rgba(255, 157, 46, 0.12);
+  touch-action: none;
+  cursor: crosshair;
+}
+
+/* Read aloud, never shown: the status line screen readers announce. */
+#status {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.hint {
+  margin: 0;
+  color: #8b93b8;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+}
